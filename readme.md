@@ -143,7 +143,7 @@ curl http://localhost:8000/generate \
 
 Create a Python file (e.g., `generate_text.py`):
 
-![script phtyon](./generate_text.py)
+![script python](./generate_text.py)
 
 
 ```python
