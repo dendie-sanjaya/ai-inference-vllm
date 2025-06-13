@@ -3,7 +3,21 @@
 
 **vLLM** is a high-performance inference library for Large Language Models (LLMs). Its strength lies in utilizing advanced techniques such as **PagedAttention** for efficient memory management, **Continuous Batching**, and custom **CUDA Kernels**. These features make vLLM an excellent choice for LLM applications demanding high speed and efficiency.
 
------
+
+## Table of Contnent
+ * [vLLM Inference Server Installation and Usage Guide](https://github.com/dendie-sanjaya/ai-inference-vllm/%23vllm-inference-server-installation-and-usage-guide)
+      * [1. Environment Preparation](https://github.com/dendie-sanjaya/ai-inference-vllm/%231-environment-preparation)
+          * [Python Installation](https://github.com/dendie-sanjaya/ai-inference-vllm/%23python-installation)
+          * [CUDA Toolkit Installation (For NVIDIA GPU Users)](https://github.com/dendie-sanjaya/ai-inference-vllm/%23cuda-toolkit-installation-for-nvidia-gpu-users)
+          * [Creating a Python Virtual Environment](https://github.com/dendie-sanjaya/ai-inference-vllm/creating-a-python-virtual-environment)
+      * [2. vLLM Installation](https://github.com/dendie-sanjaya/ai-inference-vllm/%232-vllm-installation)
+      * [3. Downloading a Model (Optional)](https://www.google.com/search?q=%233-downloading-a-model-optional)
+          * [Understanding Hugging Face Model File Structure](https://github.com/dendie-sanjaya/ai-inference-vllm/%23understanding-hugging-face-model-file-structure)
+      * [4. Running the vLLM Inference Server](https://github.com/dendie-sanjaya/ai-inference-vllm/%234-running-the-vllm-inference-server)
+      * [5. Interacting with the vLLM Server](https://github.com/dendie-sanjaya/ai-inference-vllm/%235-interacting-with-the-vllm-server)
+          * [Using `curl` (from the terminal)](https://github.com/dendie-sanjaya/ai-inference-vllm/%23using-curl-from-the-terminal)
+          * [Using a Python Script (for more programmatic control)](https://github.com/dendie-sanjaya/ai-inference-vllm/%23using-a-python-script-for-more-programmatic-control)
+
 
 ## 1\. Environment Preparation
 
@@ -15,10 +29,6 @@ vLLM requires **Python 3.9 or higher**. To install it on Ubuntu/WSL, use the fol
 sudo apt update
 sudo apt install python3.9 python3.9-venv python3-pip -y
 ```
-
-![ss](./ss/architecture.png)
-
------
 
 ### CUDA Toolkit Installation (For NVIDIA GPU Users)
 
@@ -43,8 +53,6 @@ nvcc --version
 nvidia-smi
 ```
 
------
-
 ### Creating a Python Virtual Environment
 
 It's highly recommended to use a virtual environment (venv) to isolate your project dependencies.
@@ -55,7 +63,6 @@ source /venv/bin/activate # Activate the virtual environment
 ```
 ![ss](./ss/2.jpg)
 
------
 
 ## 2\. vLLM Installation
 
@@ -65,10 +72,8 @@ Install vLLM using pip:
 pip install vllm
 ```
 
-![ss](./ss/1.jpg)
+![ss](./ss/1.png)
 
-
------
 
 ## 3\. Downloading a Model (Optional)
 
@@ -116,8 +121,6 @@ python3 -m vllm.entrypoints.api_server --model distilgpt2 --trust-remote-code
 ```
 
 You should see output indicating that the server is starting and loading the model. Typically, the server will be listening on `http://localhost:8000`.
-
------
 
 ## 5\. Interacting with the vLLM Server
 
