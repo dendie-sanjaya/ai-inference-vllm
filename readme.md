@@ -16,6 +16,8 @@ sudo apt update
 sudo apt install python3.9 python3.9-venv python3-pip -y
 ```
 
+![ss](./ss/architecture.png)
+
 -----
 
 ### CUDA Toolkit Installation (For NVIDIA GPU Users)
@@ -48,11 +50,10 @@ nvidia-smi
 It's highly recommended to use a virtual environment (venv) to isolate your project dependencies.
 
 ```bash
-python3 -m venv venv_vllm # Create a virtual environment named 'venv_vllm'
-source venv_vllm/bin/activate # Activate the virtual environment
+python3 -m venv 
+source /venv/bin/activate # Activate the virtual environment
 ```
-
-Once activated, you'll see `(venv_vllm)` at the beginning of your terminal prompt.
+![ss](./ss/2.jpg)
 
 -----
 
@@ -64,17 +65,22 @@ Install vLLM using pip:
 pip install vllm
 ```
 
+![ss](./ss/1.jpg)
+
+
 -----
 
 ## 3\. Downloading a Model (Optional)
 
 vLLM will automatically download the model from Hugging Face if it's not present locally. However, if you want to pre-download the model or use a specific local path, you can use the `huggingface_hub` library.
 
-Examples of models that can be used: [gpt2](https://huggingface.co/openai-community/gpt2) or [distilgpt2](https://huggingface.co/distilgpt2).
+Examples of models that can be used: [gpt2](https://huggingface.co/openai-community/gpt2) 
 
 ```bash
 pip install huggingface_hub
 ```
+
+![ss](./ss/3.jpg)
 
 **To download the GPT-2 model:**
 
@@ -82,15 +88,12 @@ pip install huggingface_hub
 python3 -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='openai-community/gpt2', local_dir='gpt2_model')"
 ```
 
-**To download the DistilGPT-2 model:**
+![ss](./ss/5.jpg)
 
-```bash
-python3 -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='distilgpt2', local_dir='distilgpt2_model')"
-```
-
------
 
 ### Understanding Hugging Face Model File Structure
+
+![ss](./ss/4.jpg)
 
 Based on the uploaded file structure (though no image was uploaded, I will refer to the original text you provided), these files are likely part of a Hugging Face model, especially a large one given their extensions:
 
@@ -103,7 +106,6 @@ Based on the uploaded file structure (though no image was uploaded, I will refer
 
 All these files with large sizes indicate that these are substantial model weights, supporting the claim of a "huge face model" (which likely refers to a large "Hugging Face model").
 
------
 
 ## 4\. Running the vLLM Inference Server
 
@@ -179,7 +181,5 @@ if __name__ == "__main__":
 ```bash
 python3 generate_text.py
 ```
-
------
 
 Hopefully, this revised guide makes the vLLM installation and usage process clearer and easier to follow\! Do you have any other sections you'd like to optimize or add?
