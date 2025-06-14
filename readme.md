@@ -3,6 +3,7 @@
 
 **vLLM** is a high-performance inference library for Large Language Models (LLMs). Its strength lies in utilizing advanced techniques such as **PagedAttention** for efficient memory management, **Continuous Batching**, and custom **CUDA Kernels**. These features make vLLM an excellent choice for LLM applications demanding high speed and efficiency.
 
+![ss](./ss/skema.png)
 
 ## Table of Contnent
  * [vLLM Inference Server Installation and Usage Guide](https://github.com/dendie-sanjaya/ai-inference-vllm/%23vllm-inference-server-installation-and-usage-guide)
